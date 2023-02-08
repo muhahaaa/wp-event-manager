@@ -510,21 +510,23 @@ $event = $post;
                                     <div>
                                         <div class="clearfix">&nbsp;</div>
                                         <h3 class="wpem-heading-text"><?php _e('Location', 'wp-event-manager'); ?></h3>
-                                        <div>
+                                        <div class="wpem-event-location">
+                                            <span class="wpem-event-location-text">
                                             <?php
-                                            if (get_event_address()) { ?>
-                                                <a href="http://maps.google.com/maps?q=<?php display_event_address();?>">  
-                                                    <?php display_event_address();
-                                                    echo esc_attr(',');?>
-                                                </a><?php
-                                            }
-                                            if (!is_event_online()) {?>
-                                                <a href="http://maps.google.com/maps?q=<?php display_event_location();?>" target="_blank">  
-                                                    <?php display_event_location();?>
-                                                </a>
-                                            <?php } else {
-                                                echo esc_attr('Online event');
-                                            } ?>
+                                                if (get_event_address()) { ?>
+                                                    <a href="http://maps.google.com/maps?q=<?php display_event_address();?>">  
+                                                        <?php display_event_address();
+                                                        echo esc_attr(',');?>
+                                                    </a><?php
+                                                }
+                                                if (!is_event_online()) {?>
+                                                    <a href="http://maps.google.com/maps?q=<?php display_event_location();?>" target="_blank">  
+                                                        <?php display_event_location();?>
+                                                    </a>
+                                                <?php } else {
+                                                    echo esc_attr('Online event');
+                                                } ?>
+                                            </span>
                                         </div>
                                     </div>
                                     <!-- Event location section end-->
